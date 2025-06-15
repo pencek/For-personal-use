@@ -1,9 +1,8 @@
 import hashlib
 
 target_hash = "md5值"
-password_found = False  # Eine Variable, um zu verfolgen, ob wir es gefunden haben
+password_found = False
 
-# Stelle sicher, dass der Pfad zu rockyou.txt korrekt ist
 wordlist_path = "/usr/share/wordlists/rockyou.txt"
 
 try:
@@ -12,7 +11,6 @@ try:
         for line_number, line in enumerate(file, 1):
             word = line.strip()
             
-            # Deine Logik: Wort + Newline
             candidate_string = word + "\n"
             hash_password = hashlib.md5(candidate_string.encode('utf-8')).hexdigest()
             
